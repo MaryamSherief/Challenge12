@@ -64,7 +64,6 @@ label,
 #people-value {
     width: 23rem;
     height: 3rem;
-    margin-left: .2rem;
     margin-top: .5rem;
     background-color: var(--Very-light-grayish-cyan);
     text-align: right;
@@ -231,7 +230,7 @@ label,
         justify-content: flex-start;
         align-items: flex-start;
         width: 25rem;
-        margin-left: 1rem;
+        margin-left: 2.5rem;
     }
     .output,
     .tips div,
