@@ -1,0 +1,253 @@
+:root {
+    --Strong-cyan: hsl(172, 67%, 45%);
+    --Very-dark-cyan: hsl(183, 100%, 15%);
+    --Dark-grayish-cyan: hsl(186, 14%, 43%);
+    --Grayish-cyan: hsl(184, 14%, 56%);
+    --Light-grayish-cyan: hsl(185, 41%, 84%);
+    --Very-light-grayish-cyan: hsl(189, 41%, 97%);
+    --White: hsl(0, 0%, 100%);
+    --Error: #e83b19;
+    --Font-size-form-inputs: 24px;
+}
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Space Mono', monospace;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--Light-grayish-cyan);
+}
+
+body > img {
+    margin: 5rem;
+}
+
+main {
+    max-width: 60rem;
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    background-color: var(--White);
+    border-radius: 20px;
+}
+
+.left-side {
+    width: 50%;
+}
+
+.bill,
+.tip {
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    margin-bottom: 2rem;
+}
+
+label,
+.tip p {
+    color: var(--Dark-grayish-cyan);
+}
+
+#bill-value,
+#people-value {
+    width: 23rem;
+    height: 3rem;
+    margin-left: .2rem;
+    margin-top: .5rem;
+    background-color: var(--Very-light-grayish-cyan);
+    text-align: right;
+    font-size: var(--Font-size-form-inputs);
+    border: none;
+    padding-right: 1rem;
+    border-radius: 5px;
+    color: var(--Very-dark-cyan);
+    position: relative;
+}
+
+#bill-value:focus,
+#people-value:focus,
+#bill-value:hover,
+#people-value:hover,
+#custom:focus,
+#custom:hover {
+    outline: 3px solid var(--Strong-cyan);
+}
+
+.bill,
+.people {
+    position: relative;
+}
+
+.bill img,
+.people img {
+    position: absolute;
+    top: 60%;
+    left: 5%;
+    z-index: 1;
+}
+
+.label-container {
+    width: 23.5rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.error {
+    color: var(--Error);
+}
+
+#people-value.error {
+    outline: 2px solid var(--Error);
+    color: var(--Error);
+}
+
+.tips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-top: .5rem;
+}
+
+.tips div {
+    width: 7rem;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--White);
+    background-color: var(--Very-dark-cyan);
+    border-radius: 5px;
+    font-size: var(--Font-size-form-inputs);
+    cursor: pointer;
+}
+
+.tips div:hover {
+    background-color: var(--Light-grayish-cyan);
+    color: var(--Very-dark-cyan);
+    transition: .2s;
+}
+
+.tips div.clicked {
+    background-color: var(--Strong-cyan);
+    color: var(--Very-dark-cyan);
+    transition: .2s;
+}
+
+#custom {
+    width: 7rem;
+    height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--Very-light-grayish-cyan);
+    border-radius: 5px;
+    font-size: var(--Font-size-form-inputs);
+    border: none;
+    text-align: center;
+    color: var(--Very-dark-cyan);
+}
+
+.right-side {
+    width: 50%;
+}
+
+.output {
+    padding: 2rem;
+    background-color: var(--Very-dark-cyan);
+    border-radius: 20px;
+}
+
+.tip-amount,
+.total-amount {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+
+.text p:first-child {
+    color: var(--White);
+}
+
+.text p:last-child {
+    color: var(--Grayish-cyan);
+}
+
+.value-tip,
+.value-total {
+    font-size: 3rem;
+    color: var(--Strong-cyan);
+    word-break: break-word;
+}
+
+.reset {
+    width: 100%;
+    padding: .5rem 1.2em;
+    font-size: 18px;
+    color: var(--Very-dark-cyan);
+    background-color: var(--Strong-cyan);
+    border: none;
+    border-radius: 5px;
+    margin-top: 2rem;
+    cursor: pointer;
+}
+
+.reset:hover {
+    background-color: var(--Light-grayish-cyan);
+    color: var(--Very-dark-cyan);
+    transition: .2s;
+}
+
+.hide {
+    display: none;
+}
+
+.reset:active,
+.tips div:active {
+    transform: scale(.9);
+    transition: .2s;
+}
+
+@media (max-width: 960px) {
+    main {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 820px) {
+    main {
+        justify-content: flex-start;
+        align-items: flex-start;
+        width: 25rem;
+    }
+    .output,
+    .tips div,
+    #custom,
+    #bill-value,
+    #people-value {
+        width: 21rem;
+    }
+    .label-container {
+        flex-direction: column;
+    }
+    .value-tip,
+    .value-total {
+        font-size: 20px;
+    }
+    .tip-amount,
+    .total-amount {
+        font-size: 15px;
+    }
+}
