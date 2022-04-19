@@ -231,6 +231,7 @@ label,
         justify-content: flex-start;
         align-items: flex-start;
         width: 25rem;
+        margin-left: 1rem;
     }
     .output,
     .tips div,
